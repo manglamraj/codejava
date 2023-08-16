@@ -1,11 +1,24 @@
-public class reverse {
-    public static void main(String args[]){
-        int rem,n;
-        n=123;
-        while(n>0){
-            rem=n%10;
-            System.out.print(rem);
-            n=n/10;
+public class pallindrome {
+    static boolean palindromeNo(int n) {
+        int temp = n; // Store the original number
+        int rev = 0;
+      //  int rem;
+
+        while (n != 0) {
+           int rem = n % 10;
+            rev = rev * 10 + rev;
+            n = n / 10;
         }
+        if(rev == n)
+            return true;
+        else
+            return false;
+
+    }
+
+    public static void main(String[] args) {
+        int n = 4554;
+        boolean isPalindrome = palindromeNo(n);
+        System.out.println(isPalindrome);
     }
 }
