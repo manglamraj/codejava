@@ -1,24 +1,24 @@
-public class pallindrome {
-    static boolean palindromeNo(int n) {
-        int temp = n; // Store the original number
-        int rev = 0;
-      //  int rem;
-
-        while (n != 0) {
-           int rem = n % 10;
-            rev = rev * 10 + rev;
-            n = n / 10;
+// maximum consecutiveones i/p-{0,1,1,0,1,1,1}; o/p-3
+public class ArrayG17 {
+    public static int maxConsecutiveOnes(int arr[]){
+        int n=arr.length;
+        int res=0,curr=0;
+        for(int i=0;i<n;i++){
+            if(arr[i]==0){
+                curr=0;
+            }else{
+                curr++;
+            }
+            res=Math.max(res,curr);
         }
-        if(rev == n)
-            return true;
-        else
-            return false;
-
+        return res;
     }
-
-    public static void main(String[] args) {
-        int n = 4554;
-        boolean isPalindrome = palindromeNo(n);
-        System.out.println(isPalindrome);
+    public static void main(String args[]){
+        int arr[]={0,1,1,0,1,1,1};
+        int n=arr.length;
+        int max=maxConsecutiveOnes(arr);
+        System.out.println(max);
     }
 }
+
+
