@@ -1,0 +1,16 @@
+// largest element i/p-{5,8,20,10} o/p-20
+public class ArrayG4 {
+    public static int largestElement(int arr[]){
+        int res=0;
+        for(int i=1;i<arr.length;i++){
+            if(arr[i]>arr[res])
+                res=i;
+        }
+        return res;
+    }
+    public static void main(String args[]){
+        int arr[]={5,8,20,10 };
+        int ElementLargest=largestElement(arr);
+        System.out.println(ElementLargest);
+    }
+}
