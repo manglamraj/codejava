@@ -1,16 +1,19 @@
-// largest element i/p-{5,8,20,10} o/p-20
-public class ArrayG4 {
-    public static int largestElement(int arr[]){
-        int res=0;
-        for(int i=1;i<arr.length;i++){
-            if(arr[i]>arr[res])
-                res=i;
-        }
-        return res;
+// check the array is sorted or not {7,20,30,10}
+public class ArrayG6 {
+    public static boolean SortElement(int arr[]){
+        int n=arr.length;
+       for(int i=1;i<n;i++) {
+           if (arr[i] < arr[i - 1]) {
+               return false;
+           }
+       }
+           return true;
+
+
     }
     public static void main(String args[]){
-        int arr[]={5,8,20,10 };
-        int ElementLargest=largestElement(arr);
-        System.out.println(ElementLargest);
+        int arr[]={1,2,3,4,1};
+        boolean elementsort=SortElement(arr);
+        System.out.println(elementsort);
     }
 }
